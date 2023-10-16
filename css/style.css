@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.app-main {
+    flex-grow: 1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    color: rgb(236,240,240);
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    background-color: rgb(228,188,67);
+}
+
+.control-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.control-section label {
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+
+
+.button-area button {
+    line-height: 2em;
+    font-size: 18px;
+    padding: 0 16px;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.grid-cell {
+    aspect-ratio: 21/9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.cell81 {
+    
+    flex-basis: calc(100% / 9);
+}
+
+.cell49 {
+    
+    flex-basis: calc(100% / 7);
+}
+
+.cell100 {
+    flex-basis: calc(100% / 10);    
+}
+
+.bg-skyblue {
+    background-color: skyblue;
+}
+
+.shadow {
+    box-shadow: 1px 1px 2px 2px black;
+}
+
+.bg-red {
+    background-color: red;
+}
+
