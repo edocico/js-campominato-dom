@@ -18,7 +18,7 @@ playBtnDOMElement.addEventListener('click', function() {
   // dichiaro una variabile per il punteggio
   let punteggio = 0
 
-  scoreDOMElement.innerHTML = `<span class="points"> il tuo punteggio è di ${punteggio} </span>`
+  scoreDOMElement.innerHTML = punteggio
   // creo la griglia con la difficoltà prescelta
   creaGriglia(cellNumber);
   // genero un array di numeri tutti diversi nel quale salvo le posizioni delle bombe
@@ -37,6 +37,7 @@ playBtnDOMElement.addEventListener('click', function() {
       if (bombsPosition.includes(parseInt(currentCellDOMElement.innerHTML))) {
         // aggiungo background red
         currentCellDOMElement.classList.add('bg-red')
+        console.log(punteggio)
         // alert hai perso con punteggio totalizzato
         alert(`hai perso e hai totalizzato ${punteggio} punti!`)
         // azzero la griglia
@@ -49,11 +50,11 @@ playBtnDOMElement.addEventListener('click', function() {
         currentCellDOMElement.classList.add('events-none')
         // incremento il contatore del punteggio
         punteggio++
-
+        scoreDOMElement.innerHTML = punteggio
         console.log(punteggio)
         // se il punteggio è uguale al numero totale delle celle - il numero delle bombe allora l'utente ha vinto
         if (punteggio === (cellNumber - 16)) {
-
+          console.log(punteggio)
 
           
           alert(`hai vinto totalizzando ${punteggio} punti!`)
@@ -117,6 +118,6 @@ function getRandomIntInclusive(min,max) {
 }
 
 
-// css pointer events none --> rende non cliccabile la casella
+
 
 
