@@ -37,7 +37,7 @@ playBtnDOMElement.addEventListener('click', function() {
       if (bombsPosition.includes(parseInt(currentCellDOMElement.innerHTML))) {
         // aggiungo background red
         currentCellDOMElement.classList.add('bg-red')
-        console.log(punteggio)
+        //console.log(punteggio)
         // alert hai perso con punteggio totalizzato
         alert(`hai perso e hai totalizzato ${punteggio} punti!`)
         // azzero la griglia
@@ -48,13 +48,14 @@ playBtnDOMElement.addEventListener('click', function() {
         currentCellDOMElement.classList.add('bg-skyblue')
         // applico la proprietà css pointer-events none
         currentCellDOMElement.classList.add('events-none')
+        currentCellDOMElement.classList.add('shadow')
         // incremento il contatore del punteggio
         punteggio++
         scoreDOMElement.innerHTML = punteggio
-        console.log(punteggio)
+        //console.log(punteggio)
         // se il punteggio è uguale al numero totale delle celle - il numero delle bombe allora l'utente ha vinto
         if (punteggio === (cellNumber - 16)) {
-          console.log(punteggio)
+          //console.log(punteggio)
 
           
           alert(`hai vinto totalizzando ${punteggio} punti!`)
