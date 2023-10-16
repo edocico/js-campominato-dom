@@ -100,3 +100,7 @@ h1 {
     background-color: red;
 }
 
+.events-none {
+    pointer-events: none;
+}
+

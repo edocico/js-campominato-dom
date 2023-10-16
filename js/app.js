@@ -18,7 +18,7 @@ playBtnDOMElement.addEventListener('click', function() {
 
   let punteggio = 0
 
-  scoreDOMElement.innerHTML = `il tuo punteggio è di ${punteggio}`
+  scoreDOMElement.innerHTML = `<span> il tuo punteggio è di ${punteggio} </span>`
 
   creaGriglia(cellNumber);
 
@@ -32,15 +32,30 @@ playBtnDOMElement.addEventListener('click', function() {
     const currentCellDOMElement = cellDOMElement[i];
 
     currentCellDOMElement.addEventListener("click", function () {
-      console.dir(currentCellDOMElement)
+      //console.dir(currentCellDOMElement)
       if (bombsPosition.includes(parseInt(currentCellDOMElement.innerHTML))) {
+
         currentCellDOMElement.classList.add('bg-red')
+
+        alert(`hai perso e hai totalizzato ${punteggio} punti!`)
+
+        gridDOMElement.innerHTML = "";
+
       } else {
+
         currentCellDOMElement.classList.add('bg-skyblue')
+
+        currentCellDOMElement.classList.add('events-none')
+
         punteggio++
+
         console.log(punteggio)
+
         if (punteggio === (cellNumber - 16)) {
+
           alert('hai vinto!')
+
+          gridDOMElement.innerHTML = "";
         }
       }
       
@@ -75,13 +90,7 @@ function creaGriglia(iNumber) {
 
   
 
-// funzione recupero elemento click // il target è l'elemento specifico della griglia che ho cliccato 
-// const currentCellDOMElement = event.target
-// currentCellDOMElement.classList.add..... ecc....ecc.....    
 
-/* gridDOMElement.addEventListener('click', function(event) {
-  console.log(this, event.target)
-}) */
 
 // function generazione bombe // in questo caso genera 16 numeri random tutti diversi , tra un minimo di 1 e un massimo del numero di celle presenti
 
