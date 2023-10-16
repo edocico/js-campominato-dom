@@ -18,7 +18,7 @@ playBtnDOMElement.addEventListener('click', function() {
   // dichiaro una variabile per il punteggio
   let punteggio = 0
 
-  scoreDOMElement.innerHTML = `<span> il tuo punteggio è di ${punteggio} </span>`
+  scoreDOMElement.innerHTML = `<span class="points"> il tuo punteggio è di ${punteggio} </span>`
   // creo la griglia con la difficoltà prescelta
   creaGriglia(cellNumber);
   // genero un array di numeri tutti diversi nel quale salvo le posizioni delle bombe
