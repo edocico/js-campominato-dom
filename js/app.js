@@ -13,48 +13,51 @@ const scoreDOMElement = document.querySelector('.punteggio')
 
 
 playBtnDOMElement.addEventListener('click', function() {
-
+  // recupero il numero di celle da generare in base alla difficoltà scelta
   const cellNumber = parseInt(selectDOMElement.value);
-
+  // dichiaro una variabile per il punteggio
   let punteggio = 0
 
   scoreDOMElement.innerHTML = `<span> il tuo punteggio è di ${punteggio} </span>`
-
+  // creo la griglia con la difficoltà prescelta
   creaGriglia(cellNumber);
-
+  // genero un array di numeri tutti diversi nel quale salvo le posizioni delle bombe
   const bombsPosition = getArrayOfRandomIntBetween(1,cellNumber,16)
   console.log(bombsPosition)
-
+  // recupero dal DOM tutte le celle generate
   const cellDOMElement = document.querySelectorAll(".grid-cell");
-
+  // ciclo tutte le celle
   for (let i = 0; i < cellDOMElement.length; i++) {
       
     const currentCellDOMElement = cellDOMElement[i];
-
+    // aggiungo ad ogni cella un event listner click
     currentCellDOMElement.addEventListener("click", function () {
       //console.dir(currentCellDOMElement)
+      // se la posizione di una bomba corrisponde ad una cella cliccata 
       if (bombsPosition.includes(parseInt(currentCellDOMElement.innerHTML))) {
-
+        // aggiungo background red
         currentCellDOMElement.classList.add('bg-red')
-
+        // alert hai perso con punteggio totalizzato
         alert(`hai perso e hai totalizzato ${punteggio} punti!`)
-
+        // azzero la griglia
         gridDOMElement.innerHTML = "";
-
+        // altrimenti se la cella non corrisponde alla posizione di una bomba
       } else {
-
+        // aggiungo background azzurro
         currentCellDOMElement.classList.add('bg-skyblue')
-
+        // applico la proprietà css pointer-events none
         currentCellDOMElement.classList.add('events-none')
-
+        // incremento il contatore del punteggio
         punteggio++
 
         console.log(punteggio)
-
+        // se il punteggio è uguale al numero totale delle celle - il numero delle bombe allora l'utente ha vinto
         if (punteggio === (cellNumber - 16)) {
 
-          alert('hai vinto!')
 
+          
+          alert('hai vinto!')
+          // resetto  la griglia per una nuova partita
           gridDOMElement.innerHTML = "";
         }
       }
