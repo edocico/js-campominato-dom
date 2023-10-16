@@ -56,7 +56,7 @@ playBtnDOMElement.addEventListener('click', function() {
 
 
           
-          alert('hai vinto!')
+          alert(`hai vinto totalizzando ${punteggio} punti!`)
           // resetto  la griglia per una nuova partita
           gridDOMElement.innerHTML = "";
         }
