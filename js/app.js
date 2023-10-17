@@ -119,6 +119,17 @@ function getRandomIntInclusive(min,max) {
 }
 
 
+// funzione controllo bombe
+
+function isBomb(number,bombs) {
+  if(bombs.includes(number)) {
+    return true
+  }
+
+  return false
+}
+
+
 
 
 
